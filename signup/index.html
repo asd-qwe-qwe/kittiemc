@@ -107,7 +107,7 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center gap-3">
-            <a href="/index#top" class="flex items-center gap-2">
+            <a href="/#top" class="flex items-center gap-2">
               <img src="../assets/logo.png" alt="KittieMC icon" class="w-8 h-8 rounded-lg shadow-cute">
               <div class="flex flex-col leading-tight">
                 <span
@@ -126,12 +126,12 @@
           </div>
 
           <nav class="hidden md:flex items-center gap-6 text-[11px] font-semibold">
-            <a href="/index#top" class="text-pink-50/80 hover:text-white transition-colors">Home</a>
+            <a href="/#top" class="text-pink-50/80 hover:text-white transition-colors">Home</a>
             <a href="/leaderboard" class="text-pink-50/80 hover:text-white transition-colors">Leaderboard</a>
             <a href="/shop" class="text-pink-50/80 hover:text-white transition-colors">Shop</a>
             <a href="/gallery" class="text-pink-50/80 hover:text-white transition-colors">Gallery</a>
-            <a href="/index#download" class="text-pink-50/80 hover:text-white transition-colors">Download</a>
-            <a href="/index#faq" class="text-pink-50/80 hover:text-white transition-colors">FAQ</a>
+            <a href="/#download" class="text-pink-50/80 hover:text-white transition-colors">Download</a>
+            <a href="/#faq" class="text-pink-50/80 hover:text-white transition-colors">FAQ</a>
           </nav>
 
           <div class="flex items-center gap-3">
@@ -167,12 +167,12 @@
 
         <div id="mobile-menu" class="hidden md:hidden pb-3">
           <nav class="flex flex-col gap-2 text-[11px] font-semibold text-pink-50/90">
-            <a href="/index#top" class="py-1">Home</a>
+            <a href="/#top" class="py-1">Home</a>
             <a href="/leaderboard" class="py-1">Leaderboard</a>
             <a href="/shop" class="py-1">Shop</a>
             <a href="/gallery" class="py-1">Gallery</a>
-            <a href="/index#download" class="py-1">Download</a>
-            <a href="/index#faq" class="py-1">FAQ</a>
+            <a href="/#download" class="py-1">Download</a>
+            <a href="/#faq" class="py-1">FAQ</a>
             <a id="signup-cta-mobile" href="/signup" class="py-1">Sign Up Now!</a>
           </nav>
         </div>
@@ -242,9 +242,9 @@
           <div>
             <p class="text-sm font-semibold text-pink-50">Information</p>
             <div class="mt-2 space-y-1">
-              <a href="/index#features" class="block hover:text-white">Features</a>
+              <a href="/#features" class="block hover:text-white">Features</a>
               <a href="/shop" class="block hover:text-white">Store</a>
-              <a href="/index#download" class="block hover:text-white">Download</a>
+              <a href="/#download" class="block hover:text-white">Download</a>
               <a href="/support" class="block hover:text-white">Support</a>
             </div>
           </div>
@@ -306,7 +306,7 @@
 
       logoutBtn?.addEventListener("click", () => {
         localStorage.removeItem("kittiemc_logged_in");
-        window.location.href = "/index";
+        window.location.href = "/";
       });
     })();
   </script>
@@ -334,7 +334,7 @@
       signupForm.reset();
       signupSuccess?.scrollIntoView({ behavior: "smooth", block: "nearest" });
       setTimeout(() => {
-        window.location.href = "/index";
+        window.location.href = "/";
       }, 800);
     });
   </script>
