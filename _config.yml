@@ -1,0 +1,5 @@
+# GitHub Pages Jekyll Configuration
+permalink: /:name/
+exclude:
+  - .htaccess
+
