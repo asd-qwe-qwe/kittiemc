@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>KittieMC • Shop</title>
-  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="icon" href="../assets/logo.png" type="image/png">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com/?plugins=forms,typography"></script>
@@ -125,6 +125,21 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.3s ease-out;
     }
 
     .rank-card {
@@ -341,6 +356,16 @@
     <main class="flex-1">
       <section class="pt-10 pb-14">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div id="purchase-warning" class="hidden fixed top-20 left-1/2 transform -translate-x-1/2 z-[100] max-w-md w-full mx-4 animate-fade-in">
+            <div class="rounded-xl border border-amber-400/40 bg-amber-500/10 backdrop-blur-xl p-4 text-center shadow-lg">
+              <div class="text-2xl mb-2">⚠️</div>
+              <h3 class="text-sm font-semibold text-amber-100 mb-1">Server Login Required</h3>
+              <p class="text-xs text-amber-100/80">You need to join the server first before making a purchase. You haven't joined the server yet.</p>
+              <button id="close-warning" class="mt-3 px-4 py-2 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-100 text-xs font-semibold hover:bg-amber-500/30 transition-colors">
+                OK
+              </button>
+            </div>
+          </div>
           <div class="flex flex-wrap justify-center gap-4 mb-10 text-[12px] font-bold">
             <button class="tab-pill active px-6 py-3 rounded-full" data-tab="ranks">Ranks</button>
             <button class="tab-pill px-6 py-3 rounded-full" data-tab="crates">Crates</button>
@@ -367,7 +392,7 @@
                   <li>💬 3 mailboxes</li>
                   <li>🧢 Cosmetic Hat</li>
                 </ul>
-                <a href="/login" class="buy-btn mt-auto text-white" style="background:#ff69b4; margin-top: 18px;">Purchase</a>
+                <button type="button" class="buy-btn mt-auto text-white purchase-btn" style="background:#ff69b4; margin-top: 18px;">Purchase</button>
               </div>
             </div>
 
@@ -390,7 +415,7 @@
                   <li>🎁 Monthly Rare Crate</li>
                   <li>🐾 Pet Companion</li>
                 </ul>
-                <a href="/login" class="buy-btn mt-auto text-white" style="background:#ff69b4; margin-top: 18px;">Purchase</a>
+                <button type="button" class="buy-btn mt-auto text-white purchase-btn" style="background:#ff69b4; margin-top: 18px;">Purchase</button>
               </div>
             </div>
 
@@ -413,7 +438,7 @@
                   <li>🎁 Weekly Epic Crate</li>
                   <li>⚡ Priority queue</li>
                 </ul>
-                <a href="/login" class="buy-btn mt-auto text-white" style="background:#ff69b4; margin-top: 18px;">Purchase</a>
+                <button type="button" class="buy-btn mt-auto text-white purchase-btn" style="background:#ff69b4; margin-top: 18px;">Purchase</button>
               </div>
             </div>
 
@@ -436,7 +461,7 @@
                   <li>🎁 Weekly Epic Crate</li>
                   <li>⚡ Priority queue</li>
                 </ul>
-                <a href="/login" class="buy-btn mt-auto text-white" style="background:#ff69b4; margin-top: 18px;">Purchase</a>
+                <button type="button" class="buy-btn mt-auto text-white purchase-btn" style="background:#ff69b4; margin-top: 18px;">Purchase</button>
               </div>
             </div>
 
@@ -460,7 +485,7 @@
                   <li>⚡ Priority queue</li>
                   <li>🛫 Fly in Lobby</li>
                 </ul>
-                <a href="/login" class="buy-btn mt-auto text-white" style="background:#ff69b4; margin-top: 18px;">Purchase</a>
+                <button type="button" class="buy-btn mt-auto text-white purchase-btn" style="background:#ff69b4; margin-top: 18px;">Purchase</button>
               </div>
             </div>
 
@@ -484,7 +509,7 @@
                   <li>⚡ Priority queue</li>
                   <li>🛫 Fly in Lobby</li>
                 </ul>
-                <a href="/login" class="buy-btn mt-auto text-white" style="background:#ff69b4; margin-top: 18px;">Purchase</a>
+                <button type="button" class="buy-btn mt-auto text-white purchase-btn" style="background:#ff69b4; margin-top: 18px;">Purchase</button>
               </div>
             </div>
           </div>
@@ -494,19 +519,19 @@
               <h3 class="text-lg font-extrabold text-pink-50">Common Crate</h3>
               <div class="mt-3 price-glow">$1.99</div>
               <p class="mt-2 text-[11px] text-pink-100/80 min-h-[40px]">Contains basic resources and common cosmetics.</p>
-              <a href="/login" class="buy-btn mt-auto text-white" style="background:#ff69b4;">Purchase</a>
+              <button type="button" class="buy-btn mt-auto text-white purchase-btn" style="background:#ff69b4;">Purchase</button>
             </div>
             <div class="rank-card p-5 flex flex-col h-full">
               <h3 class="text-lg font-extrabold text-pink-50">Rare Crate</h3>
               <div class="mt-3 price-glow">$4.99</div>
               <p class="mt-2 text-[11px] text-pink-100/80 min-h-[40px]">High chance for pets, particles, and rare gear.</p>
-              <a href="/login" class="buy-btn mt-auto text-white" style="background:#ff69b4;">Purchase</a>
+              <button type="button" class="buy-btn mt-auto text-white purchase-btn" style="background:#ff69b4;">Purchase</button>
             </div>
             <div class="rank-card p-5 flex flex-col h-full">
               <h3 class="text-lg font-extrabold text-pink-50">Epic Crate</h3>
               <div class="mt-3 price-glow">$9.99</div>
               <p class="mt-2 text-[11px] text-pink-100/80 min-h-[40px]">Guaranteed exclusive cosmetic + huge currency rewards.</p>
-              <a href="/login" class="buy-btn mt-auto text-white" style="background:#ff69b4;">Purchase</a>
+              <button type="button" class="buy-btn mt-auto text-white purchase-btn" style="background:#ff69b4;">Purchase</button>
             </div>
           </div>
 
@@ -517,7 +542,7 @@
               <h3 class="text-lg font-extrabold text-pink-50">Top Hat</h3>
               <p class="mt-2 text-[11px] text-pink-100/80">Classy headwear for classy kittens.</p>
               <div class="mt-4 price-glow">$3.00</div>
-              <a href="/login" class="buy-btn mt-6 text-white" style="background:#ff69b4;">Purchase</a>
+              <button type="button" class="buy-btn mt-6 text-white purchase-btn" style="background:#ff69b4;">Purchase</button>
             </div>
             <div class="rank-card p-5 flex flex-col h-full min-h-[360px]">
               <div class="text-[10px] text-pink-100/70 uppercase tracking-[0.2em]">Wings</div>
@@ -525,7 +550,7 @@
               <h3 class="text-lg font-extrabold text-pink-50">Butterfly Wings</h3>
               <p class="mt-2 text-[11px] text-pink-100/80">Beautiful particle wings that follow you.</p>
               <div class="mt-4 price-glow">$5.00</div>
-              <a href="/login" class="buy-btn mt-6 text-white" style="background:#ff69b4;">Purchase</a>
+              <button type="button" class="buy-btn mt-6 text-white purchase-btn" style="background:#ff69b4;">Purchase</button>
             </div>
             <div class="rank-card p-5 flex flex-col h-full min-h-[360px]">
               <div class="text-[10px] text-pink-100/70 uppercase tracking-[0.2em]">Pet</div>
@@ -533,7 +558,7 @@
               <h3 class="text-lg font-extrabold text-pink-50">Kitty Pet</h3>
               <p class="mt-2 text-[11px] text-pink-100/80">A loyal companion for your adventures.</p>
               <div class="mt-4 price-glow">$7.50</div>
-              <a href="/login" class="buy-btn mt-6 text-white" style="background:#ff69b4;">Purchase</a>
+              <button type="button" class="buy-btn mt-6 text-white purchase-btn" style="background:#ff69b4;">Purchase</button>
             </div>
             <div class="rank-card p-5 flex flex-col h-full min-h-[360px] lg:col-start-2">
               <div class="text-[10px] text-pink-100/70 uppercase tracking-[0.2em]">Trail</div>
@@ -541,7 +566,7 @@
               <h3 class="text-lg font-extrabold text-pink-50">Rainbow Trail</h3>
               <p class="mt-2 text-[11px] text-pink-100/80">Leave a colorful path wherever you walk.</p>
               <div class="mt-4 price-glow">$4.50</div>
-              <a href="/login" class="buy-btn mt-auto text-white" style="background:#ff69b4;">Purchase</a>
+              <button type="button" class="buy-btn mt-auto text-white purchase-btn" style="background:#ff69b4;">Purchase</button>
             </div>
           </div>
 
@@ -550,13 +575,13 @@
               <h3 class="text-lg font-extrabold text-pink-50">2x Money Booster (1 Hour)</h3>
               <p class="mt-2 text-[11px] text-pink-100/80 min-h-[40px]">Doubles all currency earned from jobs and mobs for the entire server!</p>
               <div class="mt-4 price-glow">$3.99</div>
-              <a href="/login" class="buy-btn mt-4 text-white" style="background:#ff69b4;">Purchase</a>
+              <button type="button" class="buy-btn mt-4 text-white purchase-btn" style="background:#ff69b4;">Purchase</button>
             </div>
             <div class="rank-card p-5 flex flex-col h-full min-h-[240px]">
               <h3 class="text-lg font-extrabold text-pink-50">3x XP Booster (2 Hours)</h3>
               <p class="mt-2 text-[11px] text-pink-100/80 min-h-[40px]">Triples experience points for everyone. Great for enchanting parties!</p>
               <div class="mt-4 price-glow">$6.99</div>
-              <a href="/login" class="buy-btn mt-4 text-white" style="background:#ff69b4;">Purchase</a>
+              <button type="button" class="buy-btn mt-4 text-white purchase-btn" style="background:#ff69b4;">Purchase</button>
             </div>
             <div class="rank-card p-5 flex flex-col h-full min-h-[240px]">
               <h3 class="text-lg font-extrabold text-pink-50">Flight Time (24 Hours)</h3>
@@ -641,7 +666,7 @@
 
       logoutBtn?.addEventListener("click", () => {
         localStorage.removeItem("kittiemc_logged_in");
-        window.location.href = "/index";
+        window.location.href = "/";
       });
     })();
 
@@ -672,6 +697,46 @@
     tabs.forEach(tab => {
       tab.addEventListener("click", () => showSection(tab.dataset.tab));
     });
+
+    // Purchase butonları için event listener
+    (function() {
+      const purchaseButtons = document.querySelectorAll('.purchase-btn');
+      const warningDiv = document.getElementById('purchase-warning');
+      const closeWarningBtn = document.getElementById('close-warning');
+      
+      purchaseButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const username = localStorage.getItem("kittiemc_username");
+          const loggedIn = localStorage.getItem("kittiemc_logged_in");
+          
+          // Eğer giriş yapılmışsa uyarı göster
+          if (username && loggedIn === "true") {
+            if (warningDiv) {
+              warningDiv.classList.remove('hidden');
+              warningDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+          } else {
+            // Giriş yapılmamışsa login sayfasına yönlendir
+            window.location.href = "/login";
+          }
+        });
+      });
+      
+      // Uyarı mesajını kapat
+      closeWarningBtn?.addEventListener('click', () => {
+        if (warningDiv) {
+          warningDiv.classList.add('hidden');
+        }
+      });
+      
+      // Uyarı mesajının dışına tıklanınca kapat
+      warningDiv?.addEventListener('click', (e) => {
+        if (e.target === warningDiv) {
+          warningDiv.classList.add('hidden');
+        }
+      });
+    })();
   </script>
 
   <script>
